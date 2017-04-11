@@ -36,4 +36,17 @@ describe('Find users in the database', () => {
         done();
       });
   });
+
+  it('find set of users', (done) => {
+    User.find({})
+      .sort({ name: -1 })
+      .skip(1)
+      .limit(2)
+      .then((users) => {
+        assert(users.length === 2);
+        assert(users[0]._id.toString() === user2._id.toString());
+        assert(users[1]._id.toString() === user1._id.toString());
+        done();
+      });
+  });
 });
