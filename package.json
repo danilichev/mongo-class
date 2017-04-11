@@ -6,6 +6,7 @@
     "build": "npm run clean && webpack --config ./tools/webpack.config.dev.js",
     "clean": "rm -rf ./build",
     "lint": "node_modules/.bin/eslint . --ignore-path .gitignore",
+    "test": "nodemon --exec mocha",
     "server:dev": "nodemon ./server"
   },
   "author": "danilichev",
@@ -40,6 +41,7 @@
     "html-webpack-plugin": "^2.28.0",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
+    "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
