@@ -24,7 +24,7 @@ describe('Find users in the database', () => {
   it('find user by name', (done) => {
     User.find({ name: 'User #2' })
       .then((users) => {
-        assert(users[0]._id === user2._id);
+        assert(users[0]._id.toString() === user2._id.toString());
         done();
       });
   });
