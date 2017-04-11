@@ -1,8 +1,13 @@
+const assert = require('assert');
 const User = require('../server/models/User');
 
 describe('Creating records', () => {
-  it('saves a user', () => {
+  it('saves a user', (done) => {
     const user = new User({ name: 'Dude' });
-    user.save();
+    user.save()
+      .then(() => {
+        assert(!user.isNew);
+        done();
+      });
   });
 });
